@@ -106,7 +106,7 @@ input::-webkit-input-placeholder {
 
 .creditsContainer {
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   align-items: center;
   background-color: #473366;
   height: 100px;

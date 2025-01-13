@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 import { FaBell } from "react-icons/fa6";
 import { Dropdown } from 'react-bootstrap';
 import { useState, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
+
 function Header({ name_surname, setName_surname, setToken, setRole, setUsername }) {
   const [show, setShow] = useState(false);
   const target = useRef(null);
+  const navigate = useNavigate();
+
 
   const logout = () => {
     setToken("");
@@ -16,7 +20,8 @@ function Header({ name_surname, setName_surname, setToken, setRole, setUsername 
     setName_surname("");
 
     ["authToken", "userRole", "username", "nameSurname"].forEach(item => localStorage.removeItem(item));
-    window.location.href = "/";
+    // window.location.href = "/";
+    navigate("/");
   };
 
   return (
